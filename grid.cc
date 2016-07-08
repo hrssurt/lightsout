@@ -3,7 +3,7 @@
 #include "grid.h"
 using namespace std;
 
-Grid::Grid() { }
+Grid::Grid() {}
 
 Grid::~Grid() {
 	delete td;

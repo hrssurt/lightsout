@@ -1,6 +1,5 @@
 #include "observer.h"
 #include "cell.h"
-using namespace std;
 
 Cell::Cell() {}
 
