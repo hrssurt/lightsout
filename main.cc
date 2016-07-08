@@ -1,12 +1,16 @@
 #include <iostream>
 #include <string>
 #include "grid.h"
+#include "window.h"
+#include "graphicsdisplay.h"
 using namespace std;
 
 int main() {
   cin.exceptions(ios::eofbit|ios::failbit);
   string cmd, aux;
   Grid g;
+  Xwindow xw = Xwindow();
+  GraphicsDisplay *graphicsDisplay = new GraphicsDisplay(xw);
   int moves = 0;
 
   // You will need to make changes this code.
@@ -16,7 +20,7 @@ int main() {
     if (cmd == "new") {
       int n;
       cin >> n;
-      g.init(n);
+      g.init(n, graphicsDisplay);
     } else if (cmd == "init") {
       int a;
       int b;

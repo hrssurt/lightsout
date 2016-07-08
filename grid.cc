@@ -27,7 +27,7 @@ bool Grid::isWon() const {
 	return true;
 }
 
-void Grid::init(int n) {
+void Grid::init(int n, GraphicsDisplay *graphicsDisplay) {
   if (td != NULL) {
     delete td;
     td = NULL;
@@ -67,7 +67,8 @@ void Grid::init(int n) {
 				currentCell->attach(theGrid[i][j+1]);
 			}
 
-			currentCell->attach(td);
+      currentCell->attach(td);
+			currentCell->attach(graphicsDisplay);
 		}
 	}
 }
