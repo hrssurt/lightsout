@@ -9,11 +9,6 @@ class Cell : public Observer {
   bool isOn = false;
   std::vector<Observer*> observers;
   int r, c;
-  //Cell *up;
-  //Cell *down;
-  //Cell *left;
-  //Cell *right;
- // bool switched = false;
   // Add other private members if necessary
 
  public:

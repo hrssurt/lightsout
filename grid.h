@@ -8,16 +8,14 @@
 class Grid {
   std::vector<std::vector<Cell>> theGrid;  // The actual grid.
   int gridSize;    // Size of the grid.
-  bool won;        // Grid in winning state
   TextDisplay *td; // The text display.
   // Add private members, if necessary.
 
   void clearGrid();   // Frees the grid.
-  void winthegame();
  public:
   Grid();
   ~Grid();
-  
+
 
   bool isWon() const; // Call to determine if grid is in a winning state.
   void init(int n); // Sets up an n x n grid.  Clears old grid, if necessary.

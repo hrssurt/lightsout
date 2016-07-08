@@ -34,16 +34,15 @@ SubscriptionType Cell::subType() {
 
 void Cell::notifyAllObservers() {
 	for (auto &ob:observers) {
-		if (ob.subType() == 
-			SubscriptionType::All) ob.notify(*this);
+		if (ob.subType() == SubscriptionType::All) {
+			ob.notify(*this);
+		}
 	}
-
 }
 
 void Cell::notifySwitchObservers() {
-	for  (auto &ob:observers) {
-		if (ob.subType() == 
-			SubscriptionType::SwitchOnly){
+	for (auto &ob:observers) {
+		if (ob.subType() == SubscriptionType::SwitchOnly) {
 		 		ob.notify(*this);
 		}
 	}
