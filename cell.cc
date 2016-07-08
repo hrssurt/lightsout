@@ -1,5 +1,6 @@
 #include "observer.h"
 #include "cell.h"
+using namespace std;
 
 Cell::Cell() {}
 
@@ -33,17 +34,17 @@ SubscriptionType Cell::subType() {
 }
 
 void Cell::notifyAllObservers() {
-	for (auto &ob:observers) {
-		if (ob.subType() == SubscriptionType::All) {
-			ob.notify(*this);
+  for (auto ob:observers) {
+		if (ob->subType() == SubscriptionType::All) {
+			ob->notify(*this);
 		}
 	}
 }
 
 void Cell::notifySwitchObservers() {
-	for (auto &ob:observers) {
-		if (ob.subType() == SubscriptionType::SwitchOnly) {
-		 		ob.notify(*this);
+	for (auto ob : observers) {
+    if (ob->subType() == SubscriptionType::SwitchOnly) {
+		 		ob->notify(*this);
 		}
 	}
 }

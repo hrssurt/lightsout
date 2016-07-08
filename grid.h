@@ -6,9 +6,9 @@
 #include "textdisplay.h"
 
 class Grid {
-  std::vector<std::vector<Cell>> theGrid;  // The actual grid.
+  std::vector<std::vector<Cell*>> theGrid;  // The actual grid.
   int gridSize;    // Size of the grid.
-  TextDisplay *td; // The text display.
+  TextDisplay *td = NULL; // The text display.
   // Add private members, if necessary.
 
   void clearGrid();   // Frees the grid.

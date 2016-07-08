@@ -17,7 +17,7 @@ TextDisplay::TextDisplay(int n) {
 
 void TextDisplay::notify(Cell &c) {
 	//observer
-	int tr = c.getRow();
+  int tr = c.getRow();
 	int tc = c.getCol();
 	if (c.getState()) {
 		theDisplay[tr][tc] = 'X';
@@ -33,11 +33,12 @@ SubscriptionType TextDisplay::subType() {
 }
 
 ostream &operator<<(ostream &out, const TextDisplay &td) {
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < n; ++j) {
+	for (int i = 0; i < td.gridSize; ++i) {
+		for (int j = 0; j < td.gridSize; ++j) {
 			out << td.theDisplay[i][j];
 		}
 		out << endl;
 	}
 	out << endl;
+  return out;
 }

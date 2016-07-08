@@ -7,7 +7,7 @@ class Cell;
 
 class TextDisplay: public Observer {
   std::vector<std::vector<char>> theDisplay;
-  const int gridSize;
+  int gridSize;
  public:
   TextDisplay(int n);
 
@@ -17,6 +17,6 @@ class TextDisplay: public Observer {
   ~TextDisplay();
 
   friend std::ostream &operator<<(std::ostream &out, const TextDisplay &td);
-};	
+};
 
 #endif

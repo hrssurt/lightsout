@@ -17,8 +17,7 @@ int main() {
       int n;
       cin >> n;
       g.init(n);
-    }
-    else if (cmd == "init") {
+    } else if (cmd == "init") {
       int a;
       int b;
       while (true) {
@@ -29,18 +28,24 @@ int main() {
         }
       }
       cout << g;
-    }
-    else if (cmd == "game") {
+    } else if (cmd == "game") {
       cin >> moves;
       cout << moves << " moves left" << endl;
-    }
-    else if (cmd == "switch") {
+    } else if (cmd == "switch") {
       int r = 0, c = 0;
       cin >> r >> c;
       g.toggle(r,c);
       --moves;
       cout << moves << " moves left" << endl;
       cout << g;
+
+      if (g.isWon()) {
+        cout << "Won" << endl;
+        return 0;
+      } else if (moves <= 0) {
+        cout << "Lost" << endl;
+        return 0;
+      }
     }
   }
 }
